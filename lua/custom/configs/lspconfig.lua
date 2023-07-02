@@ -4,7 +4,7 @@ local on_attach = require("plugins.configs.lspconfig").on_attach
 local capabilities = require("plugins.configs.lspconfig").capabilities
 
 local lspconfig = require "lspconfig"
-M.servers = { 'clangd', 'cmake' }
+M.servers = { 'cmake' } -- not using clangd rn
 
 for _, lspc in ipairs(M.servers) do
   lspconfig[lspc].setup {

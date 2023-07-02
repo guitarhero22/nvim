@@ -39,7 +39,6 @@ local plugins = {
     opts = {
       ensure_installed = {
         'lua-language-server', -- for nvchad and lua configs
-        'clangd', -- lsp for c family
         'clang-format', -- formatting for c family
         'cmakelang', -- formatting cmake files
         'cmake-language-server' -- lsp for cmake
@@ -67,6 +66,23 @@ local plugins = {
     config = function()
      require "custom.configs.null-ls"
     end
+  },
+
+  {
+    'psliwka/vim-smoothie',
+    lazy = false -- fix this later
+  }, -- smooth vim scrolling
+
+  { 
+    'tpope/vim-fugitive',
+    lazy = false -- fix this later
+  }, -- vim fugitive
+
+  -- YCM
+  {
+    'ycm-core/YouCompleteMe',
+    build = './install.py --clangd-completer',
+    lazy = false -- fix this later
   }
 }
 
