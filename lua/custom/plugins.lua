@@ -7,8 +7,7 @@ local plugins = {
         root_folder_label = true,
         icons = {
           show = {
-            git = true,
-            ignore = false
+            git = true
           }
         }
       },
@@ -39,10 +38,11 @@ local plugins = {
     'williamboman/mason.nvim',
     opts = {
       ensure_installed = {
-        'clangd',
-        'clang-format', -- format cpp files
-        'cmakelang', -- format cmake files
-        'cmake-language-server' --cmake lsp
+        'lua-language-server', -- for nvchad and lua configs
+        'clangd', -- lsp for c family
+        'clang-format', -- formatting for c family
+        'cmakelang', -- formatting cmake files
+        'cmake-language-server' -- lsp for cmake
       }
     }
   },
