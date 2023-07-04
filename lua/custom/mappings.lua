@@ -1,11 +1,23 @@
 local M = {}
 
-M.ycm = {
+M.disabled = {
   n = {
-    ["<leader>gt"] = {"<cmd> YcmCompleter GoTo <CR>", "ycm goto"},
-    ["<leader>fi"] = {"<cmd> YcmCompleter FixIt <CR>", "ycm fixit"},
-    ["<leader>gr"] = {"<cmd> YcmCompleter GoToReferences <CR>", "ycm goto ref"}
-  }
+    ["<C-c>"] = "",
+  },
+}
+
+M.my_mappings = {
+  n = {
+    ["<leader>fg"] = {
+      function()
+        vim.ui.input({ prompt = "grep > " }, function(inp)
+          require("telescope.builtin").grep_string {
+            search = inp,
+          }
+        end)
+      end,
+    },
+  },
 }
 
 return M
