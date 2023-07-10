@@ -6,6 +6,7 @@ local sources = {
   formatting.cmake_format,
   formatting.clang_format,
   formatting.stylua,
+  formatting.gofmt,
 }
 
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})

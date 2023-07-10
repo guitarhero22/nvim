@@ -29,6 +29,7 @@ local plugins = {
         "html",
         "markdown_inline",
         "markdown",
+        "go",
       },
     },
   },
@@ -44,6 +45,7 @@ local plugins = {
         "cmakelang", -- formatting cmake files
         "cmake-language-server", -- lsp for cmake
         "clangd", -- lsp for c family
+        "gopls", -- lsp for go
       },
     },
   },
