@@ -46,6 +46,7 @@ local plugins = {
         "cmake-language-server", -- lsp for cmake
         "clangd", -- lsp for c family
         "gopls", -- lsp for go
+        "buf-language-server", -- language server for protobuf
       },
     },
   },
@@ -81,10 +82,15 @@ local plugins = {
     lazy = false, -- fix this later
   }, -- vim fugitive
 
-  -- YCM
   {
-    "ycm-core/YouCompleteMe",
-    build = "./install.py --clangd-completer",
+    "sindrets/diffview.nvim",
+    lazy = false,
+  },
+
+  -- tmux + vim
+  {
+    "christoomey/vim-tmux-navigator",
+    lazy = false,
   },
 }
 

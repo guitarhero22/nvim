@@ -10,10 +10,10 @@ local handlers = {
 }
 
 local lspconfig = require "lspconfig"
-M.servers = { "cmake", "clangd" } -- not using clangd rn
+M.servers = { "cmake", "clangd", "bufls" }
 
 for _, lspc in ipairs(M.servers) do
-  lspconfig[lspc].setup {
+  local setup_config = {
     on_attach = function(client, buffer)
       on_attach(client, buffer)
       vim.api.nvim_create_autocmd({ "CursorHold" }, {
@@ -25,6 +25,11 @@ for _, lspc in ipairs(M.servers) do
     capabilities = capabilities,
     handlers = handlers,
   }
+
+  if lspc == "clangd" then
+    setup_config.filetypes = { "c", "cpp", "objc", "objcpp", "cuda" }
+  end
+  lspconfig[lspc].setup(setup_config)
 end
 
 vim.diagnostic.config {
