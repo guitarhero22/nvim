@@ -47,6 +47,9 @@ local plugins = {
         "clangd", -- lsp for c family
         "gopls", -- lsp for go
         "buf-language-server", -- language server for protobuf
+        "cbfmt",
+        "rust-analyzer",
+        "rustfmt",
       },
     },
   },

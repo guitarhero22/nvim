@@ -8,6 +8,8 @@ local sources = {
   formatting.stylua,
   formatting.gofmt,
   formatting.buf,
+  formatting.cbfmt,
+  formatting.rustfmt,
 }
 
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
