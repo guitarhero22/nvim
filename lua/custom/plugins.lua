@@ -76,6 +76,14 @@ local plugins = {
   },
 
   {
+    "RaafatTurki/hex.nvim",
+    lazy = false,
+    config = function()
+      require("hex").setup()
+    end,
+  },
+
+  {
     "psliwka/vim-smoothie",
     lazy = false, -- fix this later
   }, -- smooth vim scrolling
@@ -93,6 +101,11 @@ local plugins = {
   -- tmux + vim
   {
     "christoomey/vim-tmux-navigator",
+    lazy = false,
+  },
+
+  {
+    "folke/zen-mode.nvim",
     lazy = false,
   },
 }
