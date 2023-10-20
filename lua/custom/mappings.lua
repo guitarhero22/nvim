@@ -20,6 +20,19 @@ M.my_mappings = {
   },
 }
 
+M.gitsigns = {
+  plugin = true,
+
+  n = {
+    ["<leader>sh"] = {
+      function()
+        require("gitsigns").stage_hunk()
+      end,
+      "Stage Hunk",
+    },
+  },
+}
+
 M.general = {
   n = {
     ["<C-h>"] = { "<cmd> TmuxNavigateLeft<CR>", "window left" },
