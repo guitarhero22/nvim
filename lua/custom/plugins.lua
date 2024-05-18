@@ -35,6 +35,7 @@ local plugins = {
         "markdown_inline",
         "markdown",
         "go",
+        "python",
       },
     },
   },
@@ -44,17 +45,20 @@ local plugins = {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
-        "lua-language-server", -- for nvchad and lua configs
-        "stylua", -- formatting lua
-        "clang-format", -- formatting for c family
-        "cmakelang", -- formatting cmake files
+        "lua-language-server",   -- for nvchad and lua configs
+        "stylua",                -- formatting lua
+        "clang-format",          -- formatting for c family
+        "cmakelang",             -- formatting cmake files
         "cmake-language-server", -- lsp for cmake
-        "clangd", -- lsp for c family
-        "gopls", -- lsp for go
-        "buf-language-server", -- language server for protobuf
+        "clangd",                -- lsp for c family
+        "gopls",                 -- lsp for go
+        "buf-language-server",   -- language server for protobuf
         "cbfmt",
         "rust-analyzer",
         "rustfmt",
+        "autopep8",
+        "glow",
+        "mdformat",
       },
     },
   },
@@ -91,12 +95,12 @@ local plugins = {
   {
     "psliwka/vim-smoothie",
     lazy = false, -- fix this later
-  }, -- smooth vim scrolling
+  },              -- smooth vim scrolling
 
   {
     "tpope/vim-fugitive",
     lazy = false, -- fix this later
-  }, -- vim fugitive
+  },              -- vim fugitive
 
   {
     "sindrets/diffview.nvim",
@@ -111,6 +115,21 @@ local plugins = {
 
   {
     "folke/zen-mode.nvim",
+    lazy = false,
+  },
+
+  {
+    "ellisonleao/glow.nvim",
+    config = true,
+    cmd = "Glow",
+  },
+
+  {
+    "folke/todo-comments.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    config = function()
+      require("todo-comments").setup()
+    end,
     lazy = false,
   },
 }

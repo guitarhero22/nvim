@@ -10,7 +10,7 @@ local handlers = {
 }
 
 local lspconfig = require "lspconfig"
-M.servers = { "cmake", "clangd", "bufls", "rust_analyzer" }
+M.servers = { "cmake", "clangd", "bufls", "rust_analyzer", "hls" }
 
 for _, lspc in ipairs(M.servers) do
   local setup_config = {

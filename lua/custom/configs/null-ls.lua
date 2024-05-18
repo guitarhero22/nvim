@@ -10,6 +10,9 @@ local sources = {
   formatting.buf,
   formatting.cbfmt,
   formatting.rustfmt,
+  formatting.autopep8,
+  formatting.mdformat,
+  formatting.fourmolu,
 }
 
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})

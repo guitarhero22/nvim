@@ -20,9 +20,25 @@ M.my_mappings = {
   },
 }
 
+M["todo-comments"] = {
+  n = {
+    ["]t"] = {
+      function()
+        require("todo-comments").jump_next()
+      end,
+      "Next TODO",
+    },
+    ["[t"] = {
+      function()
+        require("todo-comments").jump_prev()
+      end,
+      "Prev TODO",
+    },
+  },
+}
+
 M.gitsigns = {
   plugin = true,
-
   n = {
     ["<leader>sh"] = {
       function()
