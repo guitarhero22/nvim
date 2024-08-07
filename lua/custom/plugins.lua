@@ -73,6 +73,33 @@ local plugins = {
 
     dependencies = {
       "jose-elias-alvarez/null-ls.nvim",
+      "SmiteshP/nvim-navbuddy",
+    },
+  },
+
+  {
+    "SmiteshP/nvim-navbuddy",
+    dependencies = {
+      {
+        "SmiteshP/nvim-navic",
+        opts = { lsp = { auto_attach = true } },
+      },
+      "MunifTanjim/nui.nvim",
+    },
+    opts = {
+      lsp = { auto_attach = true },
+      window = {
+        border = "rounded",
+        size = "80%",
+        sections = {
+          left = {
+            size = "20%",
+          },
+          mid = {
+            size = "20%",
+          },
+        },
+      },
     },
   },
 
@@ -120,7 +147,13 @@ local plugins = {
 
   {
     "ellisonleao/glow.nvim",
-    config = true,
+    config = function()
+      require("glow").setup {
+        width = 150,
+        width_ratio = 0.8,
+        height_ratio = 0.8,
+      }
+    end,
     cmd = "Glow",
   },
 

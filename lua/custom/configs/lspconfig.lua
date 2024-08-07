@@ -21,6 +21,11 @@ for _, lspc in ipairs(M.servers) do
           vim.diagnostic.open_float()
         end,
       })
+      -- navic
+      if client.server_capabilities.documentSymbolProvider then
+        local navic = require "nvim-navic"
+        navic.attach(client, buffer)
+      end
     end,
     capabilities = capabilities,
     handlers = handlers,

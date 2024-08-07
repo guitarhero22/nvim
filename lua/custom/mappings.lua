@@ -17,6 +17,11 @@ M.my_mappings = {
         end)
       end,
     },
+    ["<leader>N"] = {
+      function()
+        require("nvim-navbuddy").open()
+      end,
+    },
   },
 }
 
