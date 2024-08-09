@@ -22,7 +22,7 @@ if vim.g.neovide then
     ResizeGuiFont(-1)
   end, opts)
 
-  vim.o.title = 1
+  vim.o.title = true
   vim.o.titlestring = "Neovide: %{substitute(getcwd(), $HOME . '/', '', '') . '/'}"
   vim.g.neovide_cursor_vfx_mode = "ripple"
 end
