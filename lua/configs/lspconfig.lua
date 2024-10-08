@@ -1,21 +1,23 @@
-local M = {}
+-- load defaults i.e lua_lsp
+require("nvchad.configs.lspconfig").defaults()
 
-local on_attach = require("plugins.configs.lspconfig").on_attach
-local capabilities = require("plugins.configs.lspconfig").capabilities
+local lspconfig = require "lspconfig"
+
+-- EXAMPLE
 local handlers = {
   ["textDocument/publishDiagnostics"] = vim.lsp.with(
     vim.lsp.diagnostic.on_publish_diagnostics,
     { virtual_text = false }
   ),
 }
+local nvlsp = require "nvchad.configs.lspconfig"
+local servers = { "cmake", "clangd", "bufls", "rust_analyzer", "hls", "jsonls" }
 
-local lspconfig = require "lspconfig"
-M.servers = { "cmake", "clangd", "bufls", "rust_analyzer", "hls", "jsonls" }
-
-for _, lspc in ipairs(M.servers) do
+-- lsps with default config
+for _, lsp in ipairs(servers) do
   local setup_config = {
     on_attach = function(client, buffer)
-      on_attach(client, buffer)
+      nvlsp.on_attach(client, buffer)
       vim.api.nvim_create_autocmd({ "CursorHold" }, {
         callback = function()
           vim.diagnostic.open_float()
@@ -27,14 +29,16 @@ for _, lspc in ipairs(M.servers) do
         navic.attach(client, buffer)
       end
     end,
-    capabilities = capabilities,
+    on_init = nvlsp.on_init,
+    capabilities = nvlsp.capabilities,
     handlers = handlers,
   }
 
-  if lspc == "clangd" then
+  if lsp == "clangd" then
     setup_config.filetypes = { "c", "cpp", "objc", "objcpp", "cuda" }
   end
-  lspconfig[lspc].setup(setup_config)
+
+  lspconfig[lsp].setup(setup_config)
 end
 
 vim.diagnostic.config {
@@ -44,4 +48,9 @@ vim.diagnostic.config {
   },
 }
 
-return M
+-- configuring single server, example: typescript
+-- lspconfig.ts_ls.setup {
+--   on_attach = nvlsp.on_attach,
+--   on_init = nvlsp.on_init,
+--   capabilities = nvlsp.capabilities,
+-- }

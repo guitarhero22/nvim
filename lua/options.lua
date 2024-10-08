@@ -1,9 +1,14 @@
-local M = {}
+require "nvchad.options"
+
+-- add yours here!
+
+-- local o = vim.o
+-- o.cursorlineopt ='both' -- to enable cursorline!
 -- enable python provider
 vim.g["loaded_python3_provider"] = nil
 vim.cmd "runtime python3_provider"
 
-require "custom.configs.gui"
+require "configs.gui"
 
 -- tabs with vim
 vim.opt.ts = 4
@@ -19,5 +24,3 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.opt_local.tabstop = 2
   end,
 })
-
-return M
