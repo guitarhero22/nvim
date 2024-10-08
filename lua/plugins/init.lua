@@ -87,6 +87,12 @@ return {
   }, -- vim fugitive
 
   {
+    "lewis6991/gitsigns.nvim",
+    -- event = "User FilePost",
+    opts = require "configs.gitsigns",
+  },
+
+  {
     "sindrets/diffview.nvim",
     lazy = false,
   },

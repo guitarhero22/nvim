@@ -5,7 +5,7 @@
 local M = {}
 
 M.base46 = {
-  theme = "chadracula-evondev",
+  theme = "doomchad",
 }
 
 local get_navic_data = function()

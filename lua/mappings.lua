@@ -27,9 +27,13 @@ map("n", "<C-j>", "<cmd> TmuxNavigateDown<CR>", { desc = "window down" })
 map("n", "<C-k>", "<cmd> TmuxNavigateUp<CR>", { desc = "window up" })
 map("n", "<C-l>", "<cmd> TmuxNavigateRight<CR>", { desc = "window right" })
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
---
-local M = {}
 
+-- delete keybindings
+local nomap = vim.keymap.del
+
+nomap("n", "<C-c>")
+
+local M = {}
 M["todo-comments"] = {
   n = {
     ["]t"] = {
@@ -43,18 +47,6 @@ M["todo-comments"] = {
         require("todo-comments").jump_prev()
       end,
       "Prev TODO",
-    },
-  },
-}
-
-M.gitsigns = {
-  plugin = true,
-  n = {
-    ["<leader>sh"] = {
-      function()
-        require("gitsigns").stage_hunk()
-      end,
-      "Stage Hunk",
     },
   },
 }
