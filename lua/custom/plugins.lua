@@ -4,7 +4,9 @@ local plugins = {
     opts = {
       renderer = {
         highlight_git = true,
-        root_folder_label = true,
+        root_folder_label = function()
+          return vim.fs.normalize(vim.fn.getcwd())
+        end,
         icons = {
           show = {
             git = true,
@@ -36,6 +38,8 @@ local plugins = {
         "markdown",
         "go",
         "python",
+        "vim",
+        "vimdoc",
       },
     },
   },
@@ -45,20 +49,21 @@ local plugins = {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
-        "lua-language-server",   -- for nvchad and lua configs
-        "stylua",                -- formatting lua
-        "clang-format",          -- formatting for c family
-        "cmakelang",             -- formatting cmake files
+        "lua-language-server", -- for nvchad and lua configs
+        "stylua", -- formatting lua
+        "clang-format", -- formatting for c family
+        "cmakelang", -- formatting cmake files
         "cmake-language-server", -- lsp for cmake
-        "clangd",                -- lsp for c family
-        "gopls",                 -- lsp for go
-        "buf-language-server",   -- language server for protobuf
+        "clangd", -- lsp for c family
+        "gopls", -- lsp for go
+        "buf-language-server", -- language server for protobuf
         "cbfmt",
         "rust-analyzer",
         "rustfmt",
         "autopep8",
         "glow",
         "mdformat",
+        "json-lsp",
       },
     },
   },
@@ -122,12 +127,12 @@ local plugins = {
   {
     "psliwka/vim-smoothie",
     lazy = false, -- fix this later
-  },              -- smooth vim scrolling
+  }, -- smooth vim scrolling
 
   {
     "tpope/vim-fugitive",
     lazy = false, -- fix this later
-  },              -- vim fugitive
+  }, -- vim fugitive
 
   {
     "sindrets/diffview.nvim",
@@ -163,6 +168,11 @@ local plugins = {
     config = function()
       require("todo-comments").setup()
     end,
+    lazy = false,
+  },
+
+  {
+    "tpope/vim-surround",
     lazy = false,
   },
 }
