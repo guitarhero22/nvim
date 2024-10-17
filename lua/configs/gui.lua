@@ -1,7 +1,7 @@
 -- guifont
 if vim.g.neovide then
-  vim.g.gui_font_default_size = 10
-  vim.g.gui_font_size = vim.g.gui_font_default_size
+  local default_font_size = 10
+  vim.g.gui_font_size = default_font_size
   vim.g.gui_font_face = "JetBrainsMono Nerd Font"
 
   RefreshGuiFont = function()

@@ -1,4 +1,8 @@
 local opts = {
+  view = {
+    side = "left",
+    preserve_window_proportions = true,
+  },
   renderer = {
     highlight_git = true,
     root_folder_label = function()

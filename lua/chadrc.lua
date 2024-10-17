@@ -6,6 +6,37 @@ local M = {}
 
 M.base46 = {
   theme = "doomchad",
+  hl_override = {
+    ["@comment"] = {
+      italic = true,
+    },
+    ["@method"] = {
+      italic = true,
+    },
+    ["@function"] = {
+      italic = true,
+    },
+    ["@function.call"] = {
+      italic = true,
+    },
+    ["@string"] = { italic = true },
+  },
+}
+
+local apt_shadow = {
+  " █████╗ ██████╗ ████████╗",
+  "██╔══██╗██╔══██╗╚══██╔══╝",
+  "███████║██████╔╝   ██║   ",
+  "██╔══██║██╔═══╝    ██║   ",
+  "██║  ██║██║        ██║   ",
+  "╚═╝  ╚═╝╚═╝        ╚═╝   ",
+  "",
+  "",
+}
+
+M.nvdash = {
+  load_on_startup = true,
+  header = apt_shadow,
 }
 
 local get_navic_data = function()
@@ -18,7 +49,6 @@ local get_navic_data = function()
 end
 
 M.ui = {
-  nvdash = { load_on_startup = true },
   statusline = {
     separator_style = "round",
     order = { "mode", "git", "%=", "navic", "lsp_msg", "%=", "lsp", "cwd" },
