@@ -1,3 +1,17 @@
+local function format_on_save_fn(bufnr)
+  local lsp_format = "fallback"
+  local no_fallback = { "json" }
+  for _, ftype in ipairs(no_fallback) do
+    if ftype == vim.bo[bufnr].filetype then
+      lsp_format = "never"
+    end
+  end
+  return {
+    timeout_ms = 500,
+    lsp_format = lsp_format,
+  }
+end
+
 local options = {
   formatters_by_ft = {
     lua = { "stylua" },
@@ -13,11 +27,7 @@ local options = {
     -- html = { "prettier" },
   },
 
-  format_on_save = {
-    -- These options will be passed to conform.format()
-    timeout_ms = 500,
-    lsp_fallback = true,
-  },
+  format_on_save = format_on_save_fn,
 }
 
 return options
