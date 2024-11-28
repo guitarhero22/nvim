@@ -51,9 +51,12 @@ end
 M.ui = {
   statusline = {
     separator_style = "round",
-    order = { "mode", "git", "%=", "navic", "lsp_msg", "%=", "lsp", "cwd" },
+    order = { "mode", "git", "%=", "navic", "lsp_msg", "%=", "clock", "lsp", "cwd" },
     modules = {
       navic = get_navic_data,
+      clock = function()
+        return "" .. os.date "%Y-%m-%d %H:%M  "
+      end,
     },
   },
 }
