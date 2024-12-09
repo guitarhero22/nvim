@@ -1,6 +1,6 @@
 -- guifont
 if vim.g.neovide then
-  local default_font_size = 10
+  local default_font_size = 14
   vim.g.gui_font_size = default_font_size
   vim.g.gui_font_face = "JetBrainsMono Nerd Font"
 
@@ -25,4 +25,5 @@ if vim.g.neovide then
   vim.o.title = true
   vim.o.titlestring = "Neovide: %{substitute(getcwd(), $HOME . '/', '', '') . '/'}"
   vim.g.neovide_cursor_vfx_mode = "ripple"
+  vim.g.neovide_input_macos_option_key_is_meta = "only_left"
 end
