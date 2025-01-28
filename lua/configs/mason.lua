@@ -12,10 +12,10 @@ opts.ensure_installed = {
   "cbfmt",
   "rust-analyzer",
   "rustfmt",
-  "autopep8",
   "glow",
   "mdformat",
   "json-lsp",
+  "python-lsp-server",
 }
 
 return opts

@@ -11,7 +11,7 @@ local handlers = {
   ),
 }
 local nvlsp = require "nvchad.configs.lspconfig"
-local servers = { "cmake", "clangd", "buf_ls", "rust_analyzer", "hls", "jsonls" }
+local servers = { "cmake", "clangd", "buf_ls", "rust_analyzer", "hls", "jsonls", "pylsp", "svelte", "html", "ts_ls" }
 
 -- lsps with default config
 for _, lsp in ipairs(servers) do

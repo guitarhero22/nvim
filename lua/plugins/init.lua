@@ -142,4 +142,9 @@ return {
     "tpope/vim-surround",
     lazy = false,
   },
+
+  {
+    "JoosepAlviste/nvim-ts-context-commentstring",
+    lazy = false,
+  },
 }

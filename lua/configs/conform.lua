@@ -7,7 +7,7 @@ local function format_on_save_fn(bufnr)
     end
   end
   return {
-    timeout_ms = 500,
+    timeout_ms = 1000,
     lsp_format = lsp_format,
   }
 end

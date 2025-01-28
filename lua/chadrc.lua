@@ -20,23 +20,22 @@ M.base46 = {
       italic = true,
     },
     ["@string"] = { italic = true },
+    ["String"] = { italic = true },
+    ["Function"] = { italic = true },
   },
 }
 
-local apt_shadow = {
-  " █████╗ ██████╗ ████████╗",
-  "██╔══██╗██╔══██╗╚══██╔══╝",
-  "███████║██████╔╝   ██║   ",
-  "██╔══██║██╔═══╝    ██║   ",
-  "██║  ██║██║        ██║   ",
-  "╚═╝  ╚═╝╚═╝        ╚═╝   ",
-  "",
-  "",
+local cat_shadow = {
+  "       ▄▀▄     ▄▀▄       ",
+  "      ▄█░░▀▀▀▀▀░░█▄      ",
+  "  ▄▄  █░░░░░░░░░░░█  ▄▄  ",
+  " █▄▄█ █░░▀░░┬░░▀░░█ █▄▄█ ",
+  "‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾",
 }
 
 M.nvdash = {
   load_on_startup = true,
-  header = apt_shadow,
+  header = cat_shadow,
 }
 
 local get_navic_data = function()

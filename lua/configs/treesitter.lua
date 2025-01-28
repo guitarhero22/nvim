@@ -12,6 +12,13 @@ opts.ensure_installed = {
   "python",
   "vim",
   "vimdoc",
+
+  --frontend
+  "svelte",
+  "html",
+  "css",
+  "typescript",
+  "javascript",
 }
 
 return opts
