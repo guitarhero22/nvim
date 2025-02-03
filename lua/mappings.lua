@@ -26,27 +26,12 @@ map("n", "<C-h>", "<cmd> TmuxNavigateLeft<CR>", { desc = "window left" })
 map("n", "<C-j>", "<cmd> TmuxNavigateDown<CR>", { desc = "window down" })
 map("n", "<C-k>", "<cmd> TmuxNavigateUp<CR>", { desc = "window up" })
 map("n", "<C-l>", "<cmd> TmuxNavigateRight<CR>", { desc = "window right" })
+-- map("n", "<C-n>", function()
+--   require("oil").open()
+-- end)
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
 
 -- delete keybindings
 local nomap = vim.keymap.del
 
 nomap("n", "<C-c>")
-
-local M = {}
-M["todo-comments"] = {
-  n = {
-    ["]t"] = {
-      function()
-        require("todo-comments").jump_next()
-      end,
-      "Next TODO",
-    },
-    ["[t"] = {
-      function()
-        require("todo-comments").jump_prev()
-      end,
-      "Prev TODO",
-    },
-  },
-}
