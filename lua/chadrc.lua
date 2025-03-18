@@ -5,7 +5,7 @@
 local M = {}
 
 M.base46 = {
-  theme = "ayu_dark",
+  theme = "doomchad",
   hl_override = {
     FloatBorder = { fg = "one_bg2" },
     ["@comment"] = {

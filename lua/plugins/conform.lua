@@ -30,4 +30,10 @@ local options = {
   format_on_save = format_on_save_fn,
 }
 
-return options
+return {
+  {
+    "stevearc/conform.nvim",
+    event = "BufWritePre", -- uncomment for format on save
+    opts = options,
+  },
+}
